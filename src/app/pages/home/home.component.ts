@@ -27,4 +27,37 @@ export class HomeComponent {
   onVideoLoaded() {
     console.log('Vidéo chargée et prête 🎉');
   }
+
+  words: string[] = ['LIBERTÉ', 'ÉQUITÉ', 'VÉRITÉ', 'REJOINDRE', 'MONSIEUR LE MAIRE', 'BARTHÉLÉMY TOYE DIAS'];
+  displayText: string = '';
+  wordIndex: number = 0;
+  letterIndex: number = 0;
+  isDeleting: boolean = false;
+  typingSpeed: number = 100; // ms per letter
+
+  ngOnInit() {
+    this.typeWord();
+  }
+
+  typeWord() {
+    const currentWord = this.words[this.wordIndex];
+    if (this.isDeleting) {
+      this.displayText = currentWord.substring(0, this.letterIndex--);
+    } else {
+      this.displayText = currentWord.substring(0, this.letterIndex++);
+    }
+
+    if (!this.isDeleting && this.letterIndex === currentWord.length + 1) {
+      this.isDeleting = true;
+      setTimeout(() => this.typeWord(), 3000); // pause before delete
+      return;
+    }
+
+    if (this.isDeleting && this.letterIndex === 0) {
+      this.isDeleting = false;
+      this.wordIndex = (this.wordIndex + 1) % this.words.length;
+    }
+
+    setTimeout(() => this.typeWord(), this.isDeleting ? 50 : this.typingSpeed);
+  }
 }

@@ -1,0 +1,19 @@
+<main>
+  <aside class="video-container">
+    <video
+      #videoPlayer
+      class="video-bg"
+      muted
+      autoplay
+      loop
+      playsinline
+      (loadedmetadata)="onVideoLoaded()"
+    >
+      <source [src]="videoSrc" type="video/mp4" />
+      Votre navigateur ne supporte pas la vidéo HTML5.
+    </video>
+
+    <img id="photo-profil" src="/photos/diaz-profil.png" alt="photo profil" />
+    <img id="logo-transparent" src="/logos/logo-transparent-letters.svg" alt="logo transparent" />
+  </aside>
+</main>

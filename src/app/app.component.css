@@ -1,0 +1,160 @@
+main {
+    background-color: white;
+    max-width: 1920px;
+    min-height: 100vh;
+    width: 100%;
+    box-shadow: 0 0 5px #42693f55;
+    margin: 0 auto;
+}
+
+
+header {
+    max-width: 1920px;
+    width: 100%;
+    height: 80px;
+    padding: 0 35px;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #42693fee;
+    backdrop-filter: blur(3px);
+    left: 50%;
+    transform: translate(-50%);
+}
+
+
+header img {
+    width: 60px;
+    height: 60px;
+    border: 1px solid white;
+    border-radius: 50%;
+}
+
+
+header nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+
+header nav img {
+    border: none;
+    border-radius: 0;
+    width: 37px;
+    opacity: 1;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+
+header nav img:active {
+    opacity: 0.3;
+    cursor: default;
+}
+
+
+header nav ul {
+    display: flex;
+    gap: 20px;
+    height: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    justify-content: center;
+    align-items: center;
+}
+
+
+header nav ul li a {
+    text-decoration: none;
+    color: #dddddd;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+
+header nav ul li a:hover {
+    color: #ffffff;
+}
+
+
+header nav ul li a:active {
+    opacity: 0.2;
+    cursor: default;
+}
+
+
+header nav ul button {
+    background-color: #578053;
+    color: #dddddd;
+    font-weight: 600;
+    border: none;
+    width: 100px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #30482eaa;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+
+header nav ul button:hover {
+    background-color: #458140;
+}
+
+
+header nav ul button:active {
+    color: #34ff41;
+    background-color: #436740;
+    cursor: default;
+}
+
+
+.underline a {
+    position: relative;
+    display: inline-block;
+    height: 25px;
+    align-content: center;
+}
+
+
+.underline a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: currentColor;
+    transition: width 0.3s ease;
+}
+
+
+.underline a:hover::after {
+    width: 100%;
+}
+
+
+.tooltip {
+    position: fixed;
+    background-color: #2e4b2caa;
+    backdrop-filter: blur(5px);
+    color: #fffc5c;
+    padding: 10px 12px;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    font-size: 0.8rem;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    z-index: 1000;
+}
+
+.tooltip.visible {
+    opacity: 1;
+}
+
+

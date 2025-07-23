@@ -44,3 +44,32 @@
     transform: translateY(-50%) rotate(360deg);
   }
 }
+
+
+
+
+#socials-container {
+  width: 100%;
+  height: 40vh;
+  text-align: center;
+  align-content: center;
+}
+
+
+#socials-container h1 {
+  color: #42693f;
+  margin-bottom: 20px;
+}
+
+
+#socials-container #socials {
+  margin: 0 auto;
+  width: fit-content;
+  display: flex;
+  gap: 20px;
+}
+
+
+#socials-container #socials img {
+  width: 35px;
+}

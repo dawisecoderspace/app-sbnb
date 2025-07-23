@@ -1,5 +1,5 @@
 main {
-    background-color: white;
+    background-color: #42693f;
     max-width: 1920px;
     min-height: 100vh;
     width: 100%;
@@ -157,4 +157,22 @@ header nav ul button:active {
     opacity: 1;
 }
 
+
+
+
+/* Responsive */
+@media only screen and (max-width: 920px) {
+    header {
+        height: 70px;
+    }
+
+    header nav ul li {
+        display: none;
+    }
+
+    header img {
+        width: 50px;
+        height: 50px;
+    }
+}
 

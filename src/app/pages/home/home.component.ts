@@ -28,7 +28,7 @@ export class HomeComponent {
     console.log('Vidéo chargée et prête 🎉');
   }
 
-  words: string[] = ['LIBERTÉ', 'ÉQUITÉ', 'VÉRITÉ', 'REJOINDRE', 'MONSIEUR LE MAIRE', 'BARTHÉLÉMY TOYE DIAS'];
+  words: string[] = ['LIBERTÉ', 'ÉQUITÉ', 'VÉRITÉ', 'REJOINDRE', 'MONSIEUR LE MAIRE', 'BARTHÉLÉMY TOYE DIAZ'];
   displayText: string = '';
   wordIndex: number = 0;
   letterIndex: number = 0;

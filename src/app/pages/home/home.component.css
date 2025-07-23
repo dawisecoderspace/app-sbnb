@@ -1,7 +1,7 @@
 /* === MAIN STRUCTURE === */
 main {
+  background-color: #efefef;
   max-width: 1920px;
-  min-width: 390px;
   width: 100%;
   height: 100%;
   position: relative;
@@ -46,6 +46,7 @@ main {
 }
 
 #logo-transparent {
+  margin-left: 130px;
   width: 280px;
   opacity: 0.6;
   animation: rotation-logo 10s linear infinite;
@@ -56,6 +57,7 @@ main {
 .video-title {
   position: absolute;
   width: 390px;
+  min-width: 320px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -177,10 +179,10 @@ main {
 
 @keyframes rotation-logo {
   0% {
-    transform: translateY(-50%) rotate(0deg);
+    transform: translate(-50%, -50%) rotate(0deg);
   }
   100% {
-    transform: translateY(-50%) rotate(360deg);
+    transform: translate(-50%, -50%) rotate(360deg);
   }
 }
 
@@ -193,8 +195,9 @@ main {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 999; /* Plus haut que tout le reste */
-  width: 100%;
+  width: 95%;
   max-width: 700px;
+  min-width: 500px;
   padding: 30px;
   background-color: #efefefaa;
   backdrop-filter: blur(5px);
@@ -250,3 +253,91 @@ button[type="submit"] {
 button[type="submit"]:hover {
   background-color: #3d8f3b;
 }
+
+
+
+
+/* ---------- Big Screen ----------*/
+@media only screen and (min-width: 1920px) {
+  .video-container, #socials-container {
+    height: 50vh;
+    max-height: 910px;
+  }
+}
+
+
+
+@media only screen and (max-width: 920px) {
+  .video-container {
+    height: 70vh;
+  }
+
+
+  .video-container img {
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+
+  #photo-profil {
+    width: 320px;
+  }
+
+
+  #logo-transparent {
+    margin-left: 0;
+    width: 380px;
+  }
+
+
+  .video-title {
+    top: 72%;
+    width: 450px;
+  }
+
+
+  .video-title p {
+    margin-top: 5px;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    height: 40px;
+  }
+
+
+  #socials-container {
+    height: 30vh;
+    align-content: end;
+    padding: 30px;
+  }
+
+
+  #socials-container h1 {
+    margin-bottom: 10px;
+  }
+
+  #socials-container #socials img {
+    width: 30px;
+  }
+
+
+  .adhesion-form {
+    top: 74%;
+  }
+
+  .form-row input {
+    padding: 12px;
+    min-width: 250px;
+    font-size: 1.2rem;
+  }
+
+  .form-checkbox {
+    font-size: 1.1rem;
+  }
+
+
+  button[type="submit"] {
+    font-size: 1.5rem;
+  }
+}
+

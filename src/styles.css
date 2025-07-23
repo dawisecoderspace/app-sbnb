@@ -19,4 +19,5 @@ html {
 
 body {
     background-color: #42693f22;
+    min-width: 640px;
 }

@@ -371,13 +371,13 @@ button[type="submit"]:focus {
 
 
   #photo-profil {
-    width: 320px;
+    width: 40%;
   }
 
 
   #logo-transparent {
     margin-left: 0;
-    width: 380px;
+    width: 45%;
   }
 
 
@@ -444,6 +444,18 @@ button[type="submit"]:focus {
 
   button[type="submit"] {
     font-size: 1.5rem;
+  }
+}
+
+
+
+@media only screen and (max-width: 640px) {
+  #photo-profil {
+    width: 50%;
+  }
+
+  #logo-transparent {
+    width: 55%;
   }
 }
 

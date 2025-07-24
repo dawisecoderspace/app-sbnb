@@ -77,5 +77,19 @@ export class HomeComponent {
         this.formState.set(false)
       }
     });
+
+    // Clic hors du formulaire
+    document.addEventListener('click', (event: MouseEvent) => {
+      const formElement = document.querySelector('.adhesion-form');
+      const target = event.target as HTMLElement;
+
+      if (
+        this.formState() && // Formulaire visible
+        formElement &&
+        !formElement.contains(target) // Clic à l'extérieur
+      ) {
+        this.formState.set(false);
+      }
+    });
   }
 }

@@ -23,7 +23,7 @@
         <button type="button">DONNER</button>
       </ul>
       <img src="/icons/human-green.svg" alt="human">
-      <img id="burger" [src]="burgerSrc()" alt="">
+      <img id="burger" [src]="burgerSrc()" (click)="toggleBurger()" alt="">
     </nav>
   </header>
 

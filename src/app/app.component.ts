@@ -29,4 +29,12 @@ export class AppComponent {
   burgerState = signal(0)
   burgerIcons = [ '/icons/burger-bar-open.svg', '/icons/burger-bar-close.svg' ]
   burgerSrc = signal(this.burgerIcons[this.burgerState()])
+
+  toggleBurger = () => {
+    // Inverser l'état : 0 → 1, 1 → 0
+    this.burgerState.set(this.burgerState() === 0 ? 1 : 0);
+
+    // Mettre à jour l'icône correspondante
+    this.burgerSrc.set(this.burgerIcons[this.burgerState()]);
+  }
 }

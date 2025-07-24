@@ -52,25 +52,36 @@
       <b>Sénégal Bi Ñu Bokk</b> | Groupe Politique {{ annee }}</footer>
   </section>
 
-  <div class="adhesion-form">
-  <form class="form-container">
-    <h2>Rejoignez Sénégal Bi Ñu Bokk et Barthélémy Diaz !</h2>
+  @if (!formState()) {
+    <button 
+      type="button" 
+      id="display-adherer-btn" 
+      (click)="formDisplay()">
+      ADHÉRER
+    </button>
+  }
 
-    <div class="form-row">
-      <input type="text" name="prenom" placeholder="Prénom" required />
-      <input type="text" name="nom" placeholder="Nom" required />
-      <input type="email" name="email" placeholder="Email" required />
+  @if (formState()) {
+    <div class="adhesion-form">
+      <form class="form-container">
+        <h2>Rejoignez Sénégal Bi Ñu Bokk et Barthélémy Diaz !</h2>
+
+        <div class="form-row">
+          <input type="text" name="prenom" placeholder="Prénom" required />
+          <input type="text" name="nom" placeholder="Nom" required />
+          <input type="email" name="email" placeholder="Email" required />
+        </div>
+
+        <div class="form-checkbox">
+          <label>
+            <input type="checkbox" required />
+            J'accepte la politique de confidentialité*
+          </label>
+        </div>
+
+        <button type="submit">Adhérer</button>
+      </form>
     </div>
-
-    <div class="form-checkbox">
-      <label>
-        <input type="checkbox" required />
-        J'accepte la politique de confidentialité*
-      </label>
-    </div>
-
-    <button type="submit">Adhérer</button>
-  </form>
-</div>
+  }
 
 </main>

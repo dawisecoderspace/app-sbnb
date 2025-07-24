@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import { Component, ViewChild, ElementRef, AfterViewInit, signal } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -59,5 +59,23 @@ export class HomeComponent {
     }
 
     setTimeout(() => this.typeWord(), this.isDeleting ? 50 : this.typingSpeed);
+  }
+
+
+  formState = signal(true)
+  formDisplay = () => {
+    this.formState.set(true)
+  }
+
+
+  constructor() {
+    // Gestion de resize : fermer le burger menu si largeur > 920px
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 920) {
+        this.formState.set(true);
+      } else {
+        this.formState.set(false)
+      }
+    });
   }
 }

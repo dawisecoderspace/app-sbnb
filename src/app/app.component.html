@@ -25,6 +25,17 @@
       <img src="/icons/human-green.svg" alt="human">
       <img id="burger" [src]="burgerSrc()" (click)="toggleBurger()" alt="">
     </nav>
+
+    <!-- nav burger -->
+    @if (burgerDisplay()) {
+      <nav id="second-nav">
+        <p>ACCUEIL</p>
+        <p>LE MOUVEMENT</p>
+        <p>NOTRE VISION</p>
+        <p>ACTUALITÉS</p>
+      </nav>
+    }
+
   </header>
 
   <!-- Bulle de tooltip -->

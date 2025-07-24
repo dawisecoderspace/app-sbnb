@@ -10,6 +10,7 @@ main {
 
 header {
     max-width: 1920px;
+    overflow: visible;
     width: 100%;
     height: 80px;
     padding: 0 35px;
@@ -76,7 +77,8 @@ header nav ul li a {
 }
 
 
-header nav ul li a:hover {
+header nav ul li a:hover,
+header nav ul li a:focus {
     color: #ffffff;
 }
 
@@ -101,7 +103,8 @@ header nav ul button {
 }
 
 
-header nav ul button:hover {
+header nav ul button:hover,
+header nav ul button:focus {
     background-color: #458140;
 }
 
@@ -133,7 +136,8 @@ header nav ul button:active {
 }
 
 
-.underline a:hover::after {
+.underline a:hover::after,
+.underline a:focus::after {
     width: 100%;
 }
 
@@ -174,6 +178,41 @@ header nav ul button:active {
 }
 
 
+#second-nav {
+    position: fixed;
+    background-color: #222222cc;
+    top: 71px;
+    right: 25px;
+    width: 360px;
+    padding: 5px;
+    border-radius: 5px;
+    color: #eeeeee;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    transition: 0.3s;
+}
+
+
+#second-nav p {
+    border-radius: 5px;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    border-bottom: 0.5px solid #888888;
+    transition: 0.3s;
+}
+
+
+#second-nav p:hover,
+#second-nav p:focus {
+    background-color: #eeeeeeaa;
+    color: #42693f;
+    letter-spacing: 1px;
+}
+
+
 
 /* Responsive */
 @media only screen and (max-width: 920px) {
@@ -200,3 +239,12 @@ header nav ul button:active {
     }
 }
 
+
+
+@media only screen and (max-width: 640px) {
+    #second-nav {
+        right: 50%;
+        transform: translateX(50%);
+        width: 97%;
+    }
+}

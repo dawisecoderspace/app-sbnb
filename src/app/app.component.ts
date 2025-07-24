@@ -4,9 +4,10 @@ import { NgStyle } from '@angular/common';
 
 @Component({
   selector: 'app-root',
+  standalone: true,
   imports: [RouterOutlet, NgStyle],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   tooltipText = '';
@@ -26,15 +27,26 @@ export class AppComponent {
   }
 
   // burger
-  burgerState = signal(0)
-  burgerIcons = [ '/icons/burger-bar-open.svg', '/icons/burger-bar-close.svg' ]
-  burgerSrc = signal(this.burgerIcons[this.burgerState()])
+  burgerDisplay = signal(false);
+  burgerState = signal(0);
+  burgerIcons = ['/icons/burger-bar-open.svg', '/icons/burger-bar-close.svg'];
+  burgerSrc = signal(this.burgerIcons[this.burgerState()]);
 
   toggleBurger = () => {
-    // Inverser l'état : 0 → 1, 1 → 0
-    this.burgerState.set(this.burgerState() === 0 ? 1 : 0);
+    const newState = this.burgerState() === 0 ? 1 : 0;
+    this.burgerState.set(newState);
+    this.burgerSrc.set(this.burgerIcons[newState]);
+    this.burgerDisplay.set(!this.burgerDisplay());
+  };
 
-    // Mettre à jour l'icône correspondante
-    this.burgerSrc.set(this.burgerIcons[this.burgerState()]);
+  constructor() {
+    // Gestion de resize : fermer le burger menu si largeur > 920px
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 920 && this.burgerDisplay()) {
+        this.burgerDisplay.set(false);
+        this.burgerState.set(0);
+        this.burgerSrc.set(this.burgerIcons[0]);
+      }
+    });
   }
 }

@@ -5,6 +5,7 @@ main {
     width: 100%;
     box-shadow: 0 0 5px #42693f55;
     margin: 0 auto;
+    overflow-x: hidden;
 }
 
 

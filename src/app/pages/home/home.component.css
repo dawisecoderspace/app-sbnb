@@ -13,6 +13,7 @@ main {
   text-align: center;
 }
 
+
 /* === VIDEO CONTAINER === */
 .video-container {
   position: relative;
@@ -20,6 +21,7 @@ main {
   height: 60vh;
   overflow: hidden;
 }
+
 
 .video-container video {
   position: absolute;
@@ -32,6 +34,7 @@ main {
   pointer-events: none;
 }
 
+
 .video-container img {
   position: absolute;
   left: 40px;
@@ -40,10 +43,12 @@ main {
   z-index: 1;
 }
 
+
 #photo-profil {
   width: 260px;
   z-index: 2;
 }
+
 
 #logo-transparent {
   margin-left: 130px;
@@ -52,6 +57,7 @@ main {
   animation: rotation-logo 10s linear infinite;
   pointer-events: none;
 }
+
 
 /* === VIDEO TITLE === */
 .video-title {
@@ -68,16 +74,19 @@ main {
   animation: fadeInTitle 1s ease-out;
 }
 
+
 .video-title h1 {
   font-size: 3.5rem;
   letter-spacing: 1px;
 }
+
 
 .video-title h3 {
   position: relative;
   margin-top: -5px;
   padding-bottom: 5px;
 }
+
 
 .video-title h3::after {
   content: '';
@@ -92,6 +101,7 @@ main {
   z-index: 1;
   animation: anim-width-h1 2s ease-out forwards 1s;
 }
+
 
 .video-title p {
   margin-top: 5px;
@@ -109,6 +119,7 @@ main {
   animation: anim-width 1.5s ease-out forwards;
 }
 
+
 .video-title::after {
   content: '';
   position: absolute;
@@ -123,29 +134,56 @@ main {
   animation: anim-width-h1 1s ease-out forwards;
 }
 
+
 /* === SOCIALS SECTION === */
 #socials-container {
+  position: relative;
   width: 100%;
   height: 40vh;
   text-align: center;
   align-content: center;
 }
 
+
 #socials-container h1 {
   color: #42693f;
-  margin-bottom: 20px;
+  margin: 10px 0;
+  cursor: default;
 }
+
 
 #socials-container #socials {
   margin: 0 auto;
   width: fit-content;
+  align-items: center;
   display: flex;
-  gap: 20px;
+  gap: 15px;
 }
 
+
 #socials-container #socials img {
-  width: 35px;
+  padding: 5px;
+  width: 40px;
+  opacity: 0.8;
+  transition: 0.3s;
 }
+
+
+#socials-container #socials img:hover {
+  padding: 2px;
+  opacity: 1;
+}
+
+
+#socials-container footer {
+  position: absolute;
+  color: #42693f;
+  font-size: 0.9rem;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 
 /* === ANIMATIONS === */
 @keyframes anim-width-h1 {
@@ -194,7 +232,7 @@ main {
   top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 999; /* Plus haut que tout le reste */
+  z-index: 999;
   width: 95%;
   max-width: 700px;
   min-width: 500px;
@@ -207,12 +245,14 @@ main {
   text-align: center;
 }
 
+
 .form-container h2 {
   margin-bottom: 20px;
   font-size: 1.4rem;
   color: #42693f;
   text-shadow: 0 0 1px #ffffff;
 }
+
 
 .form-row {
   display: flex;
@@ -222,22 +262,33 @@ main {
   margin-bottom: 15px;
 }
 
+
 .form-row input {
   padding: 10px;
   flex: 1 1 30%;
   min-width: 150px;
-  border: none;
+  border: 2px solid transparent;
   border-radius: 5px;
+  outline: none;
 }
+
+
+.form-row input:focus {
+  border: 2px solid #4fa649;
+}
+
 
 .form-checkbox {
   margin-bottom: 20px;
   font-size: 0.9rem;
 }
 
+
 .form-checkbox input[type="checkbox"] {
   margin-right: 5px;
+  accent-color: #4fa649;
 }
+
 
 button[type="submit"] {
   padding: 10px 30px;
@@ -249,6 +300,7 @@ button[type="submit"] {
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
+
 
 button[type="submit"]:hover {
   background-color: #3d8f3b;
@@ -316,6 +368,7 @@ button[type="submit"]:hover {
     margin-bottom: 10px;
   }
 
+
   #socials-container #socials img {
     width: 30px;
   }
@@ -325,12 +378,14 @@ button[type="submit"]:hover {
     top: 74%;
   }
 
+
   .form-row input {
     padding: 12px;
     min-width: 250px;
     font-size: 1.2rem;
   }
 
+  
   .form-checkbox {
     font-size: 1.1rem;
   }

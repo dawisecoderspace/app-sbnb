@@ -8,7 +8,7 @@ import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 })
 export class HomeComponent {
   @ViewChild('videoPlayer') videoRef!: ElementRef<HTMLVideoElement>;
-
+  annee = '@2025'
   videoSrc = '/videos/video-header-optimized.mp4'; // chemin dans public ou assets selon ta config
 
   ngAfterViewInit(): void {

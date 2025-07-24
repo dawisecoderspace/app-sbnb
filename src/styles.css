@@ -20,6 +20,18 @@ html {
 body {
     background-color: #42693f22;
     width: 100%;
-    min-width: 430px;
-    overflow-x: hidden;
+    min-width: 375px;
+}
+
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NgStyle } from '@angular/common';
 
@@ -24,4 +24,9 @@ export class AppComponent {
   hideTooltip() {
     this.tooltipVisible = false;
   }
+
+  // burger
+  burgerState = signal(0)
+  burgerIcons = [ '/icons/burger-bar-open.svg', '/icons/burger-bar-close.svg' ]
+  burgerSrc = signal(this.burgerIcons[this.burgerState()])
 }

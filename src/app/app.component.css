@@ -159,20 +159,44 @@ header nav ul button:active {
 
 
 
+/* BURGER */
+#burger {
+    display: none;
+    opacity: 0.8;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+
+#burger:active {
+    opacity: 0.5;
+    cursor: default;
+}
+
+
 
 /* Responsive */
 @media only screen and (max-width: 920px) {
     header {
         height: 70px;
+        padding: 0 25px;
     }
 
-    header nav ul li {
+    header nav ul li, #btn-adherer {
         display: none;
     }
 
     header img {
         width: 50px;
         height: 50px;
+    }
+
+    header nav img {
+        width: 33px;
+    }
+
+    #burger {
+        display: block;
     }
 }
 

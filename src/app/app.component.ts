@@ -48,5 +48,20 @@ export class AppComponent {
         this.burgerSrc.set(this.burgerIcons[0]);
       }
     });
+
+    // Clic hors du burger
+    document.addEventListener('click', (event: MouseEvent) => {
+      const formElement = document.querySelector('#second-nav');
+      const target = event.target as HTMLElement;
+
+        if (
+          this.burgerDisplay() && // Burger visible
+          formElement &&
+          !formElement.contains(target) // Clic à l'extérieur
+        ) {
+          this.burgerDisplay.set(false);
+        }
+    });
   }
 }
+

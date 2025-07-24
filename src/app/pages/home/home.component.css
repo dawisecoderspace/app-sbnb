@@ -412,6 +412,15 @@ button[type="submit"]:focus {
   }
 
 
+  #socials-container footer {
+    position: initial;
+    font-size: 0.8rem;
+    bottom: 25px;
+    transform: translateX(0%);
+    margin-top: 5px;
+  }
+
+
   .adhesion-form {
     top: 50%;
   }

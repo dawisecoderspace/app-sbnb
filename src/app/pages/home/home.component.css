@@ -451,11 +451,11 @@ button[type="submit"]:focus {
 
 @media only screen and (max-width: 640px) {
   #photo-profil {
-    width: 50%;
+    width: 60%;
   }
 
   #logo-transparent {
-    width: 55%;
+    width: 65%;
   }
 }
 

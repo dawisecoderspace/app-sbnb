@@ -62,7 +62,7 @@ export class HomeComponent {
   }
 
 
-  formState = signal(true)
+  formState = signal(window.innerWidth < 920 ? false : true)
   formDisplay = () => {
     this.formState.set(true)
   }
